@@ -1,0 +1,26 @@
+<form name="search" method="get" action="{{ url_for('search_view') }}" class="text-center" role="form">
+    <div class="form-group form-group-tight">
+        <div class="input-group">
+            {{ form.location(class="form-control", placeholder="Zip code, or address", id="location", autocomplete="off") }}
+            <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+        </div>
+        {% if form.location.errors %}
+            <div class="alert alert-danger">
+                {% for error in form.location.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        {% with dist=form.distance.data %}
+            <div class="btn-group" data-toggle="buttons">
+                {% for choice in form.distance.choices %}
+                    <label class="btn btn-primary {% if dist == choice.0 %}active{% endif %}">
+                        <input type="radio" name="distance" value="{{ choice.0 }}" {% if dist == choice.0 %}checked{% endif %}>{{ choice.1|safe }}
+                    </label>
+                {% endfor %}
+            </div>
+        {% endwith %}
+    </div>
+</form>

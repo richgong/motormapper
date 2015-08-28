@@ -176,3 +176,8 @@ function init() {
         icon: image
     });
 }
+
+$("input[name=distance]:radio").change(function () {
+  //if ($('input[name=location]').val())
+  $('form[name=search]').submit();
+});
