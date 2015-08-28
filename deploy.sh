@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-git add .
-git commit -a -m "changes"
-git push heroku master
+if [ -n "$(git status --porcelain)" ]; then 
+  echo "There are local changes. Please commit your changes first!"
+else 
+  git push --force heroku master
+fi

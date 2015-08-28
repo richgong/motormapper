@@ -8,10 +8,5 @@ app.debug = True
 def home():
     return render_template('index.html')
 
-@app.route('/begin')
-def begin():
-    return render_template('begin.html')
-
-
 if __name__ == '__main__':
     app.run(port=8080)
