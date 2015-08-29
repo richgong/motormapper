@@ -1,3 +1,8 @@
+_.templateSettings.variable = "rc";
+
+var resultTemplate = _.template($( "script.result" ).html());
+
+
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
@@ -26,7 +31,7 @@ $('.navbar-collapse ul li a').click(function() {
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', initMap);
 
-var ZIP_CODE = 94101, DISTANCE = 10;
+var ZIP_CODE = 94101, DISTANCE = 15;
 
 function initMap() {
 
@@ -38,9 +43,7 @@ function initMap() {
         },
         function(cars, status) {
             for (var i in cars) {
-                var addr = cars[i].address;
-                console.log("SHIT", addr.latitude, addr.longitude);
-                new Point(addr.latitude, addr.longitude);
+                new Point(cars[i]);
             }
             Point.renderMap();
             console.log(status);
@@ -75,5 +78,4 @@ $("input[name=distance]:radio").change(function () {
   //if ($('input[name=location]').val())
   $('form[name=search]').submit();
 });
-
 

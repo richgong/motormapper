@@ -1,9 +1,24 @@
-Point = function(lat, lng) {
+Point = function(car) {
     Point.list.push(this);
-    this.ll = new google.maps.LatLng(lat, lng);
+    this.id = 'car_' + car.id;
+    this.car = car;
+    console.log(car);
+    var addr = car.address;
+    this.ll = new google.maps.LatLng(addr.latitude, addr.longitude);
     this.marker = new google.maps.Marker({
         //icon: '/static/img/map-marker.png',
         animation: google.maps.Animation.DROP
+    });
+
+    var _this = this;
+
+    $('#results').append(resultTemplate(this.car));
+    $('#' + this.id).click(function() {
+        window.open($(this).data("url"), '_blank');
+    });
+
+    this.marker.addListener('click', function() {
+        console.log(_this.car);
     });
 };
 

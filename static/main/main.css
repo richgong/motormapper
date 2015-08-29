@@ -301,3 +301,31 @@ footer p {
 .form-padded {
     padding: 10px;
 }
+
+.img-car {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    background-color: #fff;
+}
+
+
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+tr.clickable:hover {
+  background: #ffd;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}

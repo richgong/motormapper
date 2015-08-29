@@ -10,8 +10,6 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading"><i class="fa fa-car"></i> Cars for Sale</h1>
                         <p class="intro-text">Find cars for sale by neighborhood.</p>
-
-
                         {% include '_form_search.html' %}
                     </div>
                 </div>
@@ -21,6 +19,8 @@
 
     <!-- Map Section -->
     <div id="map"></div>
+
+    <table class="table" id="results"></table>
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
@@ -45,4 +45,16 @@
         </div>
     </section>
 
+    <script type="text/template" class="result">
+        <tr class="clickable" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
+            <td class="text-center ">
+                <div class="image-cropper">
+                    <img class="img-car" src="<%- rc.images[0].uri %>">
+                </div>
+            </td>
+            <td>
+                <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
+            </td>
+        </tr>
+    </script>
 {% endblock %}

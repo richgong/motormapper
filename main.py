@@ -43,15 +43,5 @@ def index_view():
     return render_template('index.html', form=form)
 
 
-@app.route('/search')
-def search_view():
-    form = SearchForm(request.args, csrf_enabled=False)
-    if not form.location.data:
-        form.location.data = get_geo().get('postal')
-    result = None
-    if form.validate():
-        pass
-    return render_template('search.html', result=result, form=form)
-
 if __name__ == '__main__':
     app.run(port=8080)
