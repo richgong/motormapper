@@ -27,13 +27,13 @@ def get_geo():
 class SearchForm(Form):
     keywords = wtf.StringField()
     location = wtf.StringField(validators=[val.DataRequired()])
-    distance = wtf.SelectField(choices=[('10_block', '<i class="fa fa-male fa-fw"></i> 10 blocks'),
-                                        ('10_mile', '<i class="fa fa-bicycle fa-fw"></i> 10 miles'),
-                                        ('50_mile', '<i class="fa fa-car fa-fw"></i> 25 miles'),
+    distance = wtf.SelectField(choices=[
+                                        ('1_mile', '<i class="fa fa-bicycle fa-fw"></i> 1 mile'),
+                                        ('25_mile', '<i class="fa fa-car fa-fw"></i> 25 miles'),
                                         ('50_mile', '<i class="fa fa-car fa-fw"></i> 75 miles'),
-                                        ('50_mile', '<i class="fa fa-car fa-fw"></i> 100 miles'),
+                                        ('100_mile', '<i class="fa fa-car fa-fw"></i> 100 miles'),
                                         ],
-                               default='2_mile')
+                               default='10_mile')
 
 @app.route('/')
 def index_view():
