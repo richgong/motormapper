@@ -28,8 +28,11 @@ class SearchForm(Form):
     keywords = wtf.StringField()
     location = wtf.StringField(validators=[val.DataRequired()])
     distance = wtf.SelectField(choices=[('10_block', '<i class="fa fa-male fa-fw"></i> 10 blocks'),
-                                        ('10_mile', '<i class="fa fa-bicycle fa-fw"></i> 10 mi.'),
-                                        ('50_mile', '<i class="fa fa-car fa-fw"></i> 50 mi.'),],
+                                        ('10_mile', '<i class="fa fa-bicycle fa-fw"></i> 10 miles'),
+                                        ('50_mile', '<i class="fa fa-car fa-fw"></i> 25 miles'),
+                                        ('50_mile', '<i class="fa fa-car fa-fw"></i> 75 miles'),
+                                        ('50_mile', '<i class="fa fa-car fa-fw"></i> 100 miles'),
+                                        ],
                                default='2_mile')
 
 @app.route('/')
