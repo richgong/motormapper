@@ -4,9 +4,9 @@
             {{ form.make(class="form-control", placeholder="Make", autocomplete="off") }}
             <span class="input-group-addon"><i class="fa fa-car fa-fw"></i></span>
         </div>
-        {% if form.zip.errors %}
+        {% if form.make.errors %}
             <div class="alert alert-danger">
-                {% for error in form.zip.errors %}
+                {% for error in form.make.errors %}
                     {{ error }}
                 {% endfor %}
             </div>
@@ -26,15 +26,30 @@
             </div>
         {% endif %}
     </div>
+
     <div class="form-group form-padded">
         {% with dist=form.distance.data %}
             <div class="btn-group" data-toggle="buttons">
                 {% for choice in form.distance.choices %}
-                    <label class="btn btn-primary {% if dist == choice.0 %}active{% endif %}">
+                    <label class="btn btn-default {% if dist == choice.0 %}active{% endif %}">
                         <input type="radio" name="distance" value="{{ choice.0 }}" {% if dist == choice.0 %}checked{% endif %}>{{ choice.1|safe }}
                     </label>
                 {% endfor %}
             </div>
+
+            {% if form.distance.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.distance.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
         {% endwith %}
+    </div>
+
+    <br>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-danger"><i class="fa fa-search fa-fw"></i> Search</button>
     </div>
 </form>

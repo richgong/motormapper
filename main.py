@@ -5,6 +5,7 @@ from flask_wtf import Form
 import wtforms as wtf
 from wtforms import validators as val
 import re
+import sys
 
 IS_PROD = os.environ.get('DYNO') != None # signals Heroku environment
 
@@ -27,7 +28,7 @@ def get_geo():
 
 ZIP_RX = re.compile(r'^\d{5}(?:[-\s]\d{4})?$')
 def validate_zip(form, field):
-    v = (field.data or '').strip()
+    v = (unicode(field.data) or '').strip()
     if not ZIP_RX.match(v):
         raise val.ValidationError('Please enter a valid zip code (e.g., 90210)')
 
@@ -43,16 +44,18 @@ class SearchForm(Form):
                                         ],
                                default='25')
 
-
-
 @app.route('/')
 def index_view():
     form = SearchForm(request.args, csrf_enabled=False)
     if not form.zip.data:
         form.zip.data = get_geo().get('postal')
-    valid_form = form.validate_on_submit()
+    valid_form = form.validate()
     return render_template('index.html', form=form, valid_form=valid_form)
 
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    if len(sys.argv) >= 2 and sys.argv[1] == 'shell':
+        import code
+        code.interact("\n>>> %s shell. Try dir()" % ('PRODUCTION' if IS_PROD else 'localdev'), local=locals())
+    else:
+        app.run(port=8080)

@@ -42,9 +42,18 @@ function initMap() {
             distance: DISTANCE
         },
         function(cars, status) {
-            for (var i in cars) {
+
+            var length = cars.length;
+            var index = 0;
+            var process = function() {
+              for (; index < length; index++) {
                 new Point(cars[i]);
-            }
+                if (index + 1 < length && index % 10 == 0) {
+                    setTimeout(process, 10);
+                }
+              }
+            };
+            process();
             Point.renderMap();
             console.log(status);
         });
@@ -74,8 +83,8 @@ function initMap() {
 
 }
 
-$("input[name=distance]:radio").change(function () {
+/*$("input[name=distance]:radio").change(function () {
   //if ($('input[name=location]').val())
   $('form[name=search]').submit();
 });
-
+*/

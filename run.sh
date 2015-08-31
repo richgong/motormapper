@@ -2,4 +2,5 @@
 
 source _include.sh
 
-python main.py
+python main.py $*
+
