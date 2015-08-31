@@ -390,7 +390,12 @@ tr.clickable:hover img {
 }
 
 .btn-primary.active {
-    background-color: #6A6A6A;
+    background-color: #868686;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #868686;
     color: white;
 }
 
