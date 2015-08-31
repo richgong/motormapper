@@ -328,10 +328,14 @@ footer p {
 }
 
 tr.clickable:hover {
-    background: #FFFDE0;
+    background: #FFFDE0 !important;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+
+tr.clickable:hover img {
+    opacity: 0.5;
 }
 
 .list-desc {
