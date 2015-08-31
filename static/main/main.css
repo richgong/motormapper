@@ -366,3 +366,35 @@ tr.clickable:hover img {
 .padding-top {
     margin-top: 25px;
 }
+
+.intro-padding {
+    margin-top: -25px;
+    margin-bottom: 5px;
+}
+
+.intro-logo {
+  height: 95px;
+
+}
+
+@media (min-width: 768px) {
+    .intro-logo {
+        height: 135px;
+    }
+}
+
+.btn-primary {
+    background-color: #eee;
+    border-color: #6A6A6A;
+    color: #555;
+}
+
+.btn-primary.active {
+    background-color: #6A6A6A;
+    color: white;
+}
+
+
+
+
+
