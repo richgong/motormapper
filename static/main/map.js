@@ -2,7 +2,7 @@ Point = function(car) {
     Point.list.push(this);
     this.hash_id = '#car_' + car.id;
     this.car = car;
-    console.log(car);
+    //console.log(car);
     var addr = car.address;
     this.ll = new google.maps.LatLng(addr.latitude, addr.longitude);
     this.marker = new google.maps.Marker({

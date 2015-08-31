@@ -1,44 +1,24 @@
 {% extends '_base.html' %}
 
 {% block content %}
-
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading padding-top">Cars for Sale</h1>
-                        <p class="intro-text intro-padding">Find cars for sale by neighborhood.</p>
-                        {% include '_form_search.html' %}
-                    </div>
+    <div class="main-pane">
+        <!-- Intro Header -->
+        <div id="intro" class="section header">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Cars for Sale</h1>
+                    <p class="intro-text">Find cars for sale by neighborhood.</p>
+                    {% include '_form_search.html' %}
                 </div>
             </div>
         </div>
-    </header>
 
-    <div id="map"></div>
-
-    <div class="container content-section col-md-8 col-md-offset-2">
-        <table class="table" id="results"></table>
+        <div id="map"></div>
     </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact MotorMapper</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <div class="results-pane">
+        <table class="table" id="results"></table>
+    </div>
 
     <script type="text/template" class="result">
         <tr class="clickable" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
@@ -52,6 +32,7 @@
                     <li>Mileage: <%- rc.mileage %></li>
                     <li>City MPG: <%- rc.technical_specs.city %></li>
                     <li>Highway MPG: <%- rc.technical_specs.highway %></li>
+                    <li>Location: <%- rc.address.city %>, <%- rc.address.state %> <%- rc.address.zipcode %></li>
                 </ul>
             </td>
             <td>
