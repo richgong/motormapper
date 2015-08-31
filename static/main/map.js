@@ -6,7 +6,7 @@ Point = function(car) {
     var addr = car.address;
     this.ll = new google.maps.LatLng(addr.latitude, addr.longitude);
     this.marker = new google.maps.Marker({
-        //icon: '/static/img/map-marker.png',
+        icon: '/static/img/icon-2.png',
         animation: google.maps.Animation.DROP
     });
 
