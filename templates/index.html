@@ -63,3 +63,13 @@
         </tr>
     </script>
 {% endblock %}
+
+
+{% block extra_js %}
+    <script>
+        {% if valid_form %}
+        ZIP_CODE = {{ form.zip.data }};
+        DISTANCE = {{ form.distance.data }};
+        {% endif %}
+    </script>
+{% endblock %}

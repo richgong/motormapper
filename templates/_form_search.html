@@ -1,12 +1,12 @@
 <form name="search" method="get" action="{{ url_for('index_view') }}" class="form-inline text-center" role="form">
     <div class="form-group form-padded">
         <div class="input-group">
-            {{ form.location(class="form-control", placeholder="Zip code, or address", id="location", autocomplete="off") }}
-            <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+            {{ form.make(class="form-control", placeholder="Make", autocomplete="off") }}
+            <span class="input-group-addon"><i class="fa fa-car fa-fw"></i></span>
         </div>
-        {% if form.location.errors %}
+        {% if form.zip.errors %}
             <div class="alert alert-danger">
-                {% for error in form.location.errors %}
+                {% for error in form.zip.errors %}
                     {{ error }}
                 {% endfor %}
             </div>
@@ -15,12 +15,12 @@
 
     <div class="form-group form-padded">
         <div class="input-group">
-            {{ form.location(class="form-control", placeholder="Zip code, or address", id="location", autocomplete="off") }}
+            {{ form.zip(class="form-control", placeholder="Zip code, or address", autocomplete="off") }}
             <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
         </div>
-        {% if form.location.errors %}
+        {% if form.zip.errors %}
             <div class="alert alert-danger">
-                {% for error in form.location.errors %}
+                {% for error in form.zip.errors %}
                     {{ error }}
                 {% endfor %}
             </div>
