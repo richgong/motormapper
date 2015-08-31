@@ -20,13 +20,17 @@ Point = function(car) {
     this.marker.addListener('click', function() {
         console.log(_this.car);
         var anchor = $(_this.hash_id);
-        $('html, body').stop().animate({
-            scrollTop: anchor.offset().top - 50
-        }, 1500, 'easeInOutExpo');
         if (Point.highlighted) {
+            Point.highlighted.css({'border-width':'0px'});
         }
+        $('html, body').stop().animate({
+            scrollTop: anchor.offset().top - 55
+        }, 1500, 'easeInOutExpo');
         Point.highlighted = anchor;
-        anchor.css({"background-color": "#C1E0FF"});
+        anchor.css({"border-color": "#07C28F",
+            "border-width":"5px",
+            "border-style":"solid"
+        });
     });
 };
 
