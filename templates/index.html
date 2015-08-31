@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading"><i class="fa fa-car"></i> Cars for Sale</h1>
+                        <h1 class="brand-heading padding-top">Cars for Sale</h1>
                         <p class="intro-text">Find cars for sale by neighborhood.</p>
                         {% include '_form_search.html' %}
                     </div>
@@ -53,6 +53,7 @@
             </td>
             <td class="list-desc card-shadow">
                 <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
+                <h5>$9,555</h5>
                 <ul class="no-points">
                     <li>Mileage: <%- rc.mileage %></li>
                     <li>City MPG: <%- rc.technical_specs.city %></li>

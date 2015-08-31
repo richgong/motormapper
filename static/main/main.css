@@ -144,8 +144,17 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
-    background-color: #000;
+    /*background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#20d6a5+0,06a386+100 */
+background: #20d6a5; /* Old browsers */
+background: -moz-linear-gradient(top,  #20d6a5 0%, #06a386 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#20d6a5), color-stop(100%,#06a386)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #20d6a5 0%,#06a386 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #20d6a5 0%,#06a386 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #20d6a5 0%,#06a386 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #20d6a5 0%,#06a386 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20d6a5', endColorstr='#06a386',GradientType=0 ); /* IE6-9 */
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -167,7 +176,7 @@ a:focus {
 
 @media(min-width:768px) {
     .intro {
-        height: 80%;
+        height: auto;
         padding: 0;
     }
 
@@ -222,7 +231,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    /*background: url(../img/downloads-bg.jpg) no-repeat center center scroll;*/
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -354,3 +363,6 @@ tr.clickable:hover img {
     border-radius: 5px;
 }
 
+.padding-top {
+    margin-top: 25px;
+}
