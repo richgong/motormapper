@@ -176,7 +176,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20d6a5', end
 
 @media(min-width:768px) {
     .intro {
-        height: auto;
+        height: auto%;
         padding: 0;
     }
 
@@ -399,6 +399,17 @@ tr.clickable:hover img {
     color: white;
 }
 
+.search-box {
+    margin-top: -25px;
+  margin-bottom: -75px;
+}
+
+@media (min-width: 768px) {
+    .search-box {
+        margin-top: 5px;
+        padding-bottom: 10px;
+    }
+}
 
 
 

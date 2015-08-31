@@ -37,10 +37,10 @@ class SearchForm(Form):
     make = wtf.StringField()
     zip = wtf.StringField(validators=[val.DataRequired(), validate_zip])
     distance = wtf.SelectField(choices=[
-                                        ('1', '<i class="fa fa-bicycle fa-fw"></i> 1 mile'),
-                                        ('25', '<i class="fa fa-car fa-fw"></i> 25 miles'),
-                                        ('50', '<i class="fa fa-car fa-fw"></i> 75 miles'),
-                                        ('100', '<i class="fa fa-car fa-fw"></i> 100 miles'),
+                                        ('1', '1 mile'),
+                                        ('25', '25 miles'),
+                                        ('50', '75 miles'),
+                                        ('100', '100 miles'),
                                         ],
                                default='25')
 
