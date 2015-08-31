@@ -17,28 +17,23 @@
     </div>
 
     <div class="results-pane">
-        <table class="table" id="results"></table>
+        <div id="results"></div>
     </div>
 
     <script type="text/template" class="result">
-        <tr class="clickable" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
-            <td>
-                <img class="img-car" src="<%- rc.images && rc.images[0] && rc.images[0].uri %>">
-            </td>
-            <td class="list-desc card-shadow">
-                <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
-                <h5>$9,555</h5>
-                <ul class="no-points">
-                    <li>Mileage: <%- rc.mileage %></li>
-                    <li>City MPG: <%- rc.technical_specs.city %></li>
-                    <li>Highway MPG: <%- rc.technical_specs.highway %></li>
-                    <li>Location: <%- rc.address.city %>, <%- rc.address.state %> <%- rc.address.zipcode %></li>
-                </ul>
-            </td>
-            <td>
-                <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md">View More Details</a>
-            </td>
-        </tr>
+        <div class="clickable card-shadow" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
+            <img class="img-car pull-left" src="<%- rc.images && rc.images[0] && rc.images[0].uri %>">
+            <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
+            <h5>$9,555</h5>
+            <ul class="no-points">
+                <li>Mileage: <%- rc.mileage %></li>
+                <li>City MPG: <%- rc.technical_specs.city %></li>
+                <li>Highway MPG: <%- rc.technical_specs.highway %></li>
+                <li>Location: <%- rc.address.city %>, <%- rc.address.state %> <%- rc.address.zipcode %></li>
+            </ul>
+
+            <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md">View More Details</a>
+        </div>
     </script>
 {% endblock %}
 
