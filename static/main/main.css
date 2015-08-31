@@ -133,7 +133,7 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #000;
+        background: #07C28F;
     }
 }
 
@@ -328,7 +328,7 @@ footer p {
 }
 
 tr.clickable:hover {
-    background: #ffd;
+    background: #FFFDE0;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -337,4 +337,13 @@ tr.clickable:hover {
 .list-desc {
     width: 100%;
     padding-left: 10px;
+}
+
+.no-points {
+    list-style-type: none;
+    color: #07C28F;
+}
+
+.view-more {
+    float: right;
 }
