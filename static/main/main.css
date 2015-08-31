@@ -350,4 +350,13 @@ tr.clickable:hover img {
 
 .view-more {
     float: right;
+    margin: auto;
+    font-weight: bold;
 }
+
+.card-shadow {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px 0px rgba(69,69,69,0.50);
+    border-radius: 5px;
+}
+

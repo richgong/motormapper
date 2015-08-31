@@ -27,7 +27,7 @@
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
+                <h2>Contact MotorMapper</h2>
                 <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
                 <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
                 </p>
@@ -51,14 +51,14 @@
             <td>
                 <img class="img-car" src="<%- rc.images[0].uri %>">
             </td>
-            <td class="list-desc">
+            <td class="list-desc card-shadow">
                 <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
                 <ul class="no-points">
                     <li>Mileage: <%- rc.mileage %></li>
                     <li>City MPG: <%- rc.technical_specs.city %></li>
                     <li>Highway MPG: <%- rc.technical_specs.highway %></li>
                 </ul>
-                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg view-more"><span class="network-name">View More Details</span></a>
+                <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md view-more">View More Details</a>
             </td>
         </tr>
     </script>
