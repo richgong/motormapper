@@ -22,17 +22,24 @@
 
     <script type="text/template" class="result">
         <div class="clickable card-shadow" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
-            <img class="img-car pull-left" src="<%- rc.images && rc.images[0] && rc.images[0].uri %>">
-            <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
-            <h5>$9,555</h5>
-            <ul class="no-points">
-                <li>Mileage: <%- rc.mileage %></li>
-                <li>City MPG: <%- rc.technical_specs.city %></li>
-                <li>Highway MPG: <%- rc.technical_specs.highway %></li>
-                <li>Location: <%- rc.address.city %>, <%- rc.address.state %> <%- rc.address.zipcode %></li>
-            </ul>
-
-            <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md">View More Details</a>
+            <table class="table">
+                <tr>
+                    <td>
+                        <img class="img-car pull-left" src="<%- rc.images && rc.images[0] && rc.images[0].uri %>">
+                    </td>
+                    <td>
+                        <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
+                        <h5>$9,555</h5>
+                    </td>
+                </tr>
+                <tr><td colspan="2" class="car-info">
+                        <div>Mileage: <%- rc.mileage %></div>
+                        <div>City MPG: <%- rc.technical_specs.city %></div>
+                        <div>Highway MPG: <%- rc.technical_specs.highway %></div>
+                        <div>Location: <%- rc.address.city %>, <%- rc.address.state %> <%- rc.address.zipcode %></div>
+                    <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md">View More Details</a>
+                </td></tr>
+            </table>
         </div>
     </script>
 {% endblock %}
