@@ -1,6 +1,6 @@
 Point = function(car) {
     Point.list.push(this);
-    this.id = 'car_' + car.id;
+    this.hash_id = '#car_' + car.id;
     this.car = car;
     console.log(car);
     var addr = car.address;
@@ -13,12 +13,16 @@ Point = function(car) {
     var _this = this;
 
     $('#results').append(resultTemplate(this.car));
-    $('#' + this.id).click(function() {
+    $(this.hash_id).click(function() {
         window.open($(this).data("url"), '_blank');
     });
 
     this.marker.addListener('click', function() {
         console.log(_this.car);
+        $('html, body').stop().animate({
+            scrollTop: $(_this.hash_id).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
     });
 };
 

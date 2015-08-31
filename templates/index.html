@@ -19,7 +19,7 @@
 
     <div id="map"></div>
 
-    <div class="container content-section text-center">
+    <div class="container content-section col-md-8 col-md-offset-2">
         <table class="table" id="results"></table>
     </div>
 
@@ -48,12 +48,10 @@
 
     <script type="text/template" class="result">
         <tr class="clickable" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
-            <td class="text-center ">
-                <div class="image-cropper">
-                    <img class="img-car" src="<%- rc.images[0].uri %>">
-                </div>
-            </td>
             <td>
+                <img class="img-car" src="<%- rc.images[0].uri %>">
+            </td>
+            <td class="list-desc">
                 <h4><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h4>
             </td>
         </tr>

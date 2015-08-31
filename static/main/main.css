@@ -302,11 +302,15 @@ footer p {
 }
 
 .img-car {
+    width: 100px;
+}
+
+/*.img-car {
     display: inline;
     margin: 0 auto;
     height: 100%;
     width: auto;
-    background-color: #fff;
+    background-color: #F00;
 }
 
 
@@ -316,15 +320,21 @@ footer p {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-}
+}*/
 
 .clickable {
-  cursor: pointer;
+    cursor: pointer;
+    margin-bottom: 10px !important;
 }
 
 tr.clickable:hover {
-  background: #ffd;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+    background: #ffd;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.list-desc {
+    width: 100%;
+    padding-left: 10px;
 }
