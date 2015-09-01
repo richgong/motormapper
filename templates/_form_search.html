@@ -1,4 +1,4 @@
-<form name="search" method="get" action="{{ url_for('index_view') }}" class="form-inline text-center" role="form">
+<form name="search" method="get" action="{{ url_for('index_view') }}" class="form-inline text-center search-form" role="form">
     <div class="form-group form-padded">
         <div class="input-group">
             {{ form.make(class="form-control", placeholder="Keywords", autocomplete="off") }}
@@ -47,9 +47,7 @@
         {% endwith %}
     </div>
 
-    <br>
-
-    <div class="form-group search-box">
+    <div>
         <button type="submit" class="btn btn-danger"><i class="fa fa-search fa-fw"></i> Search</button>
     </div>
 </form>

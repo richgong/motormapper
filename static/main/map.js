@@ -13,7 +13,7 @@ Point = function(car) {
     var _this = this;
 
     $('#results').append(resultTemplate(this.car));
-    $('#status').html(statusTemplate(Point));
+    Point.updateResults();
 
     $(this.hash_id).click(function() {
         window.open($(this).data("url"), '_blank');
@@ -58,6 +58,11 @@ Point.renderMap = function() {
     if (lls.length)
         Point.map.fitBounds(bounds);
     $('#spinner').hide();
+    Point.updateResults();
+};
+
+Point.updateResults = function() {
+    $('#status').html(statusTemplate(Point));
 };
 
 Point.lookupLocation = function(address, callback) {

@@ -3,7 +3,7 @@ body {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     color: #393939;
-    background-color: #fff;
+    background-color: #07C28F;
 }
 
 html {
@@ -48,7 +48,6 @@ a:focus {
 #intro {
     text-align: center;
     color: #fff;
-    background-color: #07C28F;
 }
 
 #intro .brand-heading {
@@ -101,23 +100,6 @@ ul.banner-social-buttons {
 .img-car {
     width: 100%;
 }
-
-/*.img-car {
-    display: inline;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-    background-color: #F00;
-}
-
-
-.image-cropper {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-}*/
 
 .clickable {
     cursor: pointer;
@@ -179,19 +161,6 @@ ul.banner-social-buttons {
     color: white;
 }
 
-.search-box {
-    margin-top: -25px;
-    margin-bottom: -75px;
-}
-
-@media (min-width: 768px) {
-    .search-box {
-        margin-top: 5px;
-        padding-bottom: 10px;
-    }
-}
-
-
 @media(min-width: 768px) {
     .results-pane {
         position: fixed;
@@ -233,4 +202,8 @@ h4 {
 
 .features {
     margin-bottom: 10px;
+}
+
+.search-form {
+    margin-bottom: 20px;
 }
