@@ -22,6 +22,23 @@ $('.navbar-collapse ul li a').click(function() {
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', initMap);
 
+
+function radians(deg) {
+    return Math.PI * deg / 180;
+}
+
+function distance(lat1, lon1, lat2, lon2) {
+    lat1 = radians(lat1);
+    lat2 = radians(lat2);
+    lon1 = radians(lon1);
+    lon2 = radians(lon2);
+    var dlon = lon2 - lon1;
+    var dlat = lat2 - lat1;
+    var a = Math.pow(Math.sin(dlat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon/2), 2);
+    a = 2 * Math.asin(Math.sqrt(a));
+    return 3956 * a;
+}
+
 var ZIP_CODE = 94101, DISTANCE = 15;
 
 function initMap() {
