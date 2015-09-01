@@ -80,6 +80,7 @@ a:focus {
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
+
 .btn-default:hover,
 .btn-default:focus {
     border: 1px solid #42dca3;
@@ -144,7 +145,7 @@ ul.banner-social-buttons {
 
 .card-shadow {
     background: #FFFFFF;
-    box-shadow: 0px 1px 3px 0px rgba(69,69,69,0.50);
+    border: solid 1px #D3D3D3;
     border-radius: 5px;
     margin: 10px;
 }
@@ -203,5 +204,14 @@ ul.banner-social-buttons {
     .main-pane {
         margin-right: 400px;
     }
+}
+
+.btn-font {
+    font-weight: bold;
+    background-color: #07C28F;
+    color: #fff;
+    border-color: #079D74;
+    border-radius: 3px;
+
 }
 
