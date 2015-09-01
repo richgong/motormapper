@@ -24,7 +24,7 @@
         <div class="clickable card-shadow" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
             <img class="img-car" src="<%- rc.images && rc.images[0] && rc.images[0].uri %>">
             <h3><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h3>
-            <h4>$9,555</h4>
+            <h4>$<%- numberWithCommas(rc.price) %></h4>
             <span>
                 <div>Mileage: <%- rc.mileage %></div>
                 <div>City MPG: <%- rc.technical_specs.city %></div>

@@ -39,6 +39,11 @@ function distance(lat1, lon1, lat2, lon2) {
     return 3956 * a;
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
 var ZIP_CODE = 94101, DISTANCE = 15;
 
 function initMap() {
