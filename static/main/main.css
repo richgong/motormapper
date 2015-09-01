@@ -218,3 +218,8 @@ ul.banner-social-buttons {
 h4 {
     color: #07C28F;
 }
+
+.btn-danger {
+    background-color: #fff;
+    color: #000;
+}
