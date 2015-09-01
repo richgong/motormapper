@@ -13,6 +13,7 @@ Point = function(car) {
     var _this = this;
 
     $('#results').append(resultTemplate(this.car));
+
     $(this.hash_id).click(function() {
         window.open($(this).data("url"), '_blank');
     });
@@ -34,6 +35,8 @@ Point = function(car) {
     });
 };
 
+Point.limit_exceeded = false;
+
 Point.highlighted = null;
 
 Point.prototype.update = function(bounds) {
@@ -52,6 +55,8 @@ Point.renderMap = function() {
     }
     if (lls.length)
         Point.map.fitBounds(bounds);
+    $('#spinner').hide();
+    $('#status').html(statusTemplate(Point));
 };
 
 Point.lookupLocation = function(address, callback) {

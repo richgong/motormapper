@@ -6,7 +6,7 @@
         <div id="intro" class="section header">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">Cars for Sale</h1>
+                    <h1 class="brand-heading"><i class="fa fa-spinner fa-spin" id="spinner"></i> Cars for Sale</h1>
                     <p class="intro-text">Find cars for sale by neighborhood.</p>
                     {% include '_form_search.html' %}
                 </div>
@@ -17,6 +17,7 @@
     </div>
 
     <div class="results-pane">
+        <div id="status"></div>
         <div id="results"></div>
     </div>
 
@@ -32,6 +33,13 @@
                 <div>Location: <%- rc.address.city %>, <%- rc.address.state %> <%- rc.address.zipcode %></div>
                 <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md btn-font">View More Details</a>
             </span>
+        </div>
+    </script>
+
+
+    <script type="text/template" class="status">
+        <div class="status">
+            <%- rc.list.length %><% if (rc.limit_exceeded) { %>+<% } %> cars found within <%- DISTANCE %> miles.
         </div>
     </script>
 {% endblock %}

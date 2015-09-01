@@ -1,6 +1,7 @@
 _.templateSettings.variable = "rc";
 
 var resultTemplate = _.template($( "script.result" ).html());
+var statusTemplate = _.template($( "script.status" ).html());
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -44,7 +45,7 @@ function numberWithCommas(x) {
 }
 
 
-var ZIP_CODE = 94101, DISTANCE = 15;
+var ZIP_CODE = 94101, DISTANCE = 15, MAX_LIMIT = 100;
 
 function initMap() {
 
@@ -55,8 +56,11 @@ function initMap() {
             distance: DISTANCE
         },
         function(cars, status) {
-
             var length = cars.length;
+            if (length > MAX_LIMIT) {
+                Point.limit_exceeded = true;
+                length = 200;
+            }
             var index = 0;
             var process = function() {
                 var next = index + 30;
