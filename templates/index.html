@@ -23,29 +23,34 @@
 
     <script type="text/template" class="result">
         <div class="clickable card-shadow" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
-            <img class="img-car" src="<%- rc.images && rc.images[0] && rc.images[0].uri %>">
-            <h3><%- rc.model_year.year %> <%- rc.make.name %> <%- rc.model.name %></h3>
-            <h4>$<%- numberWithCommas(rc.price) %></h4>
-            <span>
-                <div>Mileage: <%- rc.mileage %></div>
-                <div>City MPG: <%- rc.technical_specs.city %></div>
-                <div>Highway MPG: <%- rc.technical_specs.highway %></div>
-                <div>Location: <%- rc.address.city %>, <%- rc.address.state %> <%- rc.address.zipcode %></div>
-                <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md btn-font">View More Details</a>
-            </span>
+            <img class="img-car" src="<%- rc.cover_image %>">
+            <div class="result-inset">
+                <h3><%- rc.title %></h3>
+                <h4>$<%- numberWithCommas(rc.price) %></h4>
+                <div><i class="fa fa-road"></i> <b><%- numberWithCommas(rc.mileage) %></b> miles</div>
+                <div><i class="fa fa-globe"></i> <b><%- rc.addresses[0].city %>, <%- rc.addresses[0].state %></b></div>
+                <div class="features"><% for (var i in rc.features) { %>
+                    <span class="badge"><%- rc.features[i] %></span>
+                <% } %>
+                </div>
+                <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md btn-font">View Details &raquo;</a>
+            </div>
         </div>
     </script>
 
 
     <script type="text/template" class="status">
         <div class="status">
-            <%- rc.list.length %><% if (rc.limit_exceeded) { %>+<% } %> cars found within <%- DISTANCE %> miles.
+           Showing <b><%- rc.list.length %></b> cars of <b><%- rc.total_results %></b> found within <b><%- DISTANCE %></b> miles of <b><%- ZIP_CODE %></b>.
         </div>
     </script>
 {% endblock %}
 
 {% block extra_js %}
     <script>
+        {% if form.make.data %}
+            MAKE = '{{ form.make.data|url_encode}}';
+        {% endif %}
         {% if valid_form %}
             ZIP_CODE = {{ form.zip.data }};
             DISTANCE = {{ form.distance.data }};

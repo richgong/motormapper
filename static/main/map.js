@@ -3,8 +3,8 @@ Point = function(car) {
     this.hash_id = '#car_' + car.id;
     this.car = car;
     //console.log(car);
-    var addr = car.address;
-    this.ll = new google.maps.LatLng(addr.latitude, addr.longitude);
+    var addr = car.locations[0];
+    this.ll = new google.maps.LatLng(addr.lat, addr.lon);
     this.marker = new google.maps.Marker({
         icon: '/static/img/icon-14.png',
         animation: google.maps.Animation.DROP
@@ -13,6 +13,7 @@ Point = function(car) {
     var _this = this;
 
     $('#results').append(resultTemplate(this.car));
+    $('#status').html(statusTemplate(Point));
 
     $(this.hash_id).click(function() {
         window.open($(this).data("url"), '_blank');
@@ -28,9 +29,10 @@ Point = function(car) {
             scrollTop: anchor.offset().top - 55
         }, 1500, 'easeInOutExpo');
         Point.highlighted = anchor;
-        anchor.css({"border-color": "#07C28F",
-            "border-width":"5px",
-            "border-style":"solid"
+        anchor.css({
+            "border-color": "#07C28F",
+            "border-width": "5px",
+            "border-style": "solid"
         });
     });
 };
@@ -56,7 +58,6 @@ Point.renderMap = function() {
     if (lls.length)
         Point.map.fitBounds(bounds);
     $('#spinner').hide();
-    $('#status').html(statusTemplate(Point));
 };
 
 Point.lookupLocation = function(address, callback) {
@@ -73,3 +74,5 @@ Point.lookupLocation = function(address, callback) {
 Point.geocoder = new google.maps.Geocoder();
 
 Point.list = [];
+
+Point.total_results = 0;

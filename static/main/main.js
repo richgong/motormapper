@@ -19,10 +19,8 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
-// Google Maps Scripts
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', initMap);
-
 
 function radians(deg) {
     return Math.PI * deg / 180;
@@ -45,34 +43,34 @@ function numberWithCommas(x) {
 }
 
 
-var ZIP_CODE = 94101, DISTANCE = 15, MAX_LIMIT = 100;
+var ZIP_CODE = 94101, DISTANCE = 15, MAKE = null, MAX_LIMIT = 50;
 
 function initMap() {
+    var params = {
+        zipcode: ZIP_CODE,
+        distance: DISTANCE,
+        size: MAX_LIMIT
+    };
+    if (MAKE) {
+        console.log('Make:', MAKE);
+        params['q'] = MAKE;
+    }
 
-
-    $.get('https://api.instamotor.com/v2/mp/vehicles',
-        {
-            zipcode: ZIP_CODE,
-            distance: DISTANCE
-        },
-        function(cars, status) {
+    $.get('http://api.instamotorlabs.com/v2/mp/vehicles/search',
+        params,
+        function(data, status) {
+            console.log(data);
+            var cars = data.hits.hits;
             var length = cars.length;
-            if (length > MAX_LIMIT) {
+            Point.total_results = data.hits.total;
+            if (Point.total > MAX_LIMIT) {
                 Point.limit_exceeded = true;
-                length = 200;
             }
-            var index = 0;
-            var process = function() {
-                var next = index + 30;
-                for (; index < length && index < next; index++) {
-                    new Point(cars[index]);
-                }
-                if (index < length)
-                    setTimeout(process, 1);
-                else
-                    Point.renderMap();
-            };
-            process();
+            for (var index = 0; index < length; index++) {
+                console.log(cars[index]._source);
+                new Point(cars[index]._source);
+            }
+            Point.renderMap();
             console.log(status);
         });
 

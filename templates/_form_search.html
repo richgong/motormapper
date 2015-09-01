@@ -1,7 +1,7 @@
 <form name="search" method="get" action="{{ url_for('index_view') }}" class="form-inline text-center" role="form">
     <div class="form-group form-padded">
         <div class="input-group">
-            {{ form.make(class="form-control", placeholder="Make", autocomplete="off") }}
+            {{ form.make(class="form-control", placeholder="Keywords", autocomplete="off") }}
             <span class="input-group-addon"><i class="fa fa-car fa-fw"></i></span>
         </div>
         {% if form.make.errors %}

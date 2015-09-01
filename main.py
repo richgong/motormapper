@@ -6,6 +6,7 @@ import wtforms as wtf
 from wtforms import validators as val
 import re
 import sys
+import urllib
 
 IS_PROD = os.environ.get('DYNO') != None # signals Heroku environment
 
@@ -51,6 +52,11 @@ def index_view():
         form.zip.data = get_geo().get('postal')
     valid_form = form.validate()
     return render_template('index.html', form=form, valid_form=valid_form)
+
+
+@app.template_filter()
+def url_encode(url):
+    return urllib.quote_plus(url)
 
 
 if __name__ == '__main__':
