@@ -219,12 +219,8 @@ h4 {
     color: #07C28F;
 }
 
-.btn-danger {
-    background-color: #fff;
-    color: #000;
-}
-
 .status {
     padding: 10px;
-    font-size: 1.2em;
+    font-size: 1.6em;
+    color: #838383;
 }
