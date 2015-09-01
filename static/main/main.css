@@ -223,3 +223,8 @@ h4 {
     background-color: #fff;
     color: #000;
 }
+
+.status {
+    padding: 10px;
+    font-size: 1.2em;
+}
