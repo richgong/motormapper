@@ -164,6 +164,7 @@ ul.banner-social-buttons {
 @media(min-width: 768px) {
     .main-pane {
         margin-right: 400px;
+        padding-right: 20px;
     }
 
     .map-fixed {
