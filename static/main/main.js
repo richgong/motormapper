@@ -64,7 +64,8 @@ function numberWithCommas(x) {
 }
 
 
-var ZIP_CODE = 94101, DISTANCE = 15, MAKE = null, MAX_LIMIT = 50;
+var ZIP_CODE = 94101, DISTANCE = 15, MAKE = null, MAX_LIMIT = 50,
+    DEFAULT_LAT = 37.7911459, DEFAULT_LON = -122.4051804;
 
 function initMap() {
     var params = {
@@ -97,7 +98,7 @@ function initMap() {
 
     var mapOptions = {
         zoom: 15, // How zoomed in you want the map to start at (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+        center: new google.maps.LatLng(DEFAULT_LAT, DEFAULT_LON), // New York
         scrollwheel: false
     };
     // Create the Google Map using out element and options defined above
