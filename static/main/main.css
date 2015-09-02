@@ -98,7 +98,7 @@ ul.banner-social-buttons {
 }
 
 .img-car {
-    width: 100%;
+    width: 200px;
 }
 
 .clickable {
@@ -162,7 +162,11 @@ ul.banner-social-buttons {
 }
 
 @media(min-width: 768px) {
-    .results-pane {
+    .main-pane {
+        margin-right: 400px;
+    }
+
+    .map-fixed {
         position: fixed;
         width: 400px;
         overflow-y: scroll;
@@ -171,8 +175,9 @@ ul.banner-social-buttons {
         right: 0;
         background-color: #fff;
     }
-    .main-pane {
-        margin-right: 400px;
+
+    #map {
+        height: 100%;
     }
 }
 
@@ -195,9 +200,13 @@ h4 {
     color: #838383;
 }
 
+.result-left {
+    padding: 10px;
+}
 
-.result-inset {
-    padding: 10px !important;
+.result-right {
+    padding: 10px;
+    width: 100%;
 }
 
 .features {

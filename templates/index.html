@@ -13,35 +13,38 @@
             </div>
         </div>
 
-        <div id="map"></div>
-    </div>
-
-    <div class="results-pane">
+        <div id="map-container" class="map-fixed"><div id="map"></div></div>
         <div id="status"></div>
         <div id="results"></div>
     </div>
 
+    <div class="results-pane">
+    </div>
+
     <script type="text/template" class="result">
         <div class="clickable card-shadow" data-url="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>">
-            <img class="img-car" src="<%- rc.cover_image %>">
-            <div class="result-inset">
-                <h3><%- rc.title %></h3>
-                <h4>$<%- numberWithCommas(rc.price) %></h4>
-                <div><i class="fa fa-road"></i> <b><%- numberWithCommas(rc.mileage) %></b> miles</div>
-                <div><i class="fa fa-globe"></i> <b><%- rc.addresses[0].city %>, <%- rc.addresses[0].state %></b></div>
-                <div class="features"><% for (var i in rc.features) { %>
-                    <span class="badge"><%- rc.features[i] %></span>
-                <% } %>
-                </div>
-                <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md btn-font">View Details &raquo;</a>
-            </div>
+            <table>
+                <tr><td class="result-left">
+                    <img class="img-car" src="<%- rc.cover_image %>?w=200&h=200&fit=crop">
+                </td><td class="result-right">
+                    <h3><%- rc.title %></h3>
+                    <h4>$<%- numberWithCommas(rc.price) %></h4>
+                    <div><i class="fa fa-road"></i> <b><%- numberWithCommas(rc.mileage) %></b> miles</div>
+                    <div><i class="fa fa-globe"></i> <b><%- rc.addresses[0].city %>, <%- rc.addresses[0].state %></b></div>
+                    <div class="features"><% for (var i in rc.features) { %>
+                        <span class="badge"><%- rc.features[i] %></span>
+                        <% } %>
+                    </div>
+                    <a href="https://instamotor.com/vehicle/<%- rc.id %>" id="car_<%- rc.id %>" class="btn btn-default btn-md btn-font">View Details &raquo;</a>
+                </td></tr>
+            </table>
         </div>
     </script>
 
 
     <script type="text/template" class="status">
         <div class="status">
-           Showing <b><%- rc.list.length %></b> of <b><%- rc.total_results %></b> cars, within <b><%- DISTANCE %></b> miles of <b><%- ZIP_CODE %></b>.
+            Showing <b><%- rc.list.length %></b> of <b><%- rc.total_results %></b> cars, within <b><%- DISTANCE %></b> miles of <b><%- ZIP_CODE %></b>.
         </div>
     </script>
 {% endblock %}

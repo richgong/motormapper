@@ -3,7 +3,15 @@ _.templateSettings.variable = "rc";
 var resultTemplate = _.template($( "script.result" ).html());
 var statusTemplate = _.template($( "script.status" ).html());
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
+/*function checkScroll() {
+    var map = $("#map-container");
+    if (map.offset().top > 50) {
+        map.addClass("map-fixed");
+    } else {
+        map.removeClass("map-fixed");
+    }
+}*/
+
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -12,7 +20,13 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+
+    checkScroll();
 });
+
+
+//$(window).scroll(_.debounce(checkScroll, 150, true));
+
 
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
