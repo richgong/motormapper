@@ -25,6 +25,13 @@ $(function() {
 });
 
 
+$("input[name=distance]:radio").change(function () {
+  //if ($('input[name=location]').val())
+  $('form[name=search]').submit();
+});
+
+
+
 //$(window).scroll(_.debounce(checkScroll, 150, true));
 
 
