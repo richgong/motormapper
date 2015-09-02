@@ -44,7 +44,7 @@
 
     <script type="text/template" class="status">
         <div class="status">
-            Showing <b><%- rc.list.length %></b> of <b><%- rc.total_results %></b> cars, within <b><%- DISTANCE %></b> miles of <b><%- ZIP_CODE %></b>.
+            Showing <b><%- rc.list.length %></b> of <b><%- rc.total_results %></b> <% if (MAKE) { %><b>"{{ form.make.data }}"</b><% } %> cars, within <b><%- DISTANCE %></b> miles of <b><%- ZIP_CODE %></b>.
         </div>
     </script>
 {% endblock %}
