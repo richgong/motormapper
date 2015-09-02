@@ -161,15 +161,15 @@ ul.banner-social-buttons {
     color: white;
 }
 
-@media(min-width: 768px) {
+@media(min-width: 850px) {
     .main-pane {
-        margin-right: 400px;
+        margin-right: 40%;
         padding-right: 20px;
     }
 
     .map-fixed {
         position: fixed;
-        width: 400px;
+        width: 40%;
         overflow-y: scroll;
         top: 0;
         bottom: 0;
