@@ -218,6 +218,7 @@ h4 {
 .result-right {
     padding: 10px;
     width: 100%;
+    vertical-align: top;
 }
 
 .features {
@@ -233,3 +234,4 @@ h4 {
     color: #4B4B4B;
     font-weight: 500;
 }
+
