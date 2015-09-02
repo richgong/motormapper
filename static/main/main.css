@@ -98,7 +98,9 @@ ul.banner-social-buttons {
 }
 
 .img-car {
-    width: 200px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
 }
 
 .clickable {
@@ -142,6 +144,10 @@ ul.banner-social-buttons {
 @media (min-width: 768px) {
     .intro-logo {
         height: 135px;
+    }
+    .img-car {
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -202,7 +208,11 @@ h4 {
 }
 
 .result-left {
-    padding: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    vertical-align: top;
 }
 
 .result-right {
