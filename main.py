@@ -20,9 +20,12 @@ def get_geo():
     result = GEO_IP_CACHE.get(ip)
     if not result:
         if IS_PROD:
-            result = requests.get('http://ipinfo.io/%s/json' % ip).json()
+            try:
+                result = requests.get('http://ipinfo.io/%s/json' % ip).json()
+            except Exception as e:
+                result = dict(postal=94110)
         else:
-            result = dict(postal=90210)
+            result = dict(postal=94110)
         GEO_IP_CACHE[ip] = result
     return result
 
